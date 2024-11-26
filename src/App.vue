@@ -2,7 +2,7 @@
   <div class="about">
     <button @click="lottoNumber">로또 번호 생성</button>
     <div v-if="lottoNumbers.length > 0">
-      <h2>생성된 번호</h2>
+      <h2>생성된 번호 test</h2>
       <p>{{ lottoNumbers.join(', ') }}</p>
     </div>
   </div>
