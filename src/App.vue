@@ -2,16 +2,17 @@
   <div>
     <h1>로또 번호 뽑기</h1>
     <div>
-      <p>고정 번호: {{ fixedNumbers.join(', ') }}</p>
-      <p>추첨된 번호: {{ generatedNumbers.join(', ') }}</p>
+      <button @click="generateLottoNumbers">로또 번호 추첨</button>
     </div>
-    <button @click="generateLottoNumbers">로또 번호 추첨</button>
 
     <!-- 모달 -->
     <div v-if="isModalVisible" class="modal-overlay" @click="closeModal">
       <div class="modal-content" @click.stop>
+        <h2>고정 번호</h2>
+        <p>고정 번호: {{ fixedNumbers.join(', ') }}</p>
+
         <h2>당첨 번호</h2>
-        <p>{{ generatedNumbers.join(', ') }}</p>
+        <p>추첨된 번호: {{ generatedNumbers.join(', ') }}</p>
         <button @click="closeModal">닫기</button>
       </div>
     </div>
@@ -76,43 +77,94 @@ export default {
 </script>
 
 <style scoped>
+/* 전체 컨테이너 스타일 */
+.container {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 50px auto;
+}
+
 h1 {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  color: #333;
   margin-bottom: 20px;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.lotto-info p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
 }
 
+.generate-btn {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.generate-btn:hover {
+  background-color: #e07b00;
+}
+
+/* 모달 오버레이 */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
+/* 모달 콘텐츠 스타일 */
 .modal-content {
-  background: white;
-  padding: 20px;
+  background-color: #fff;
+  padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 300px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-.modal-content button {
-  margin-top: 20px;
-  padding: 8px 16px;
-  font-size: 14px;
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.winning-numbers {
+  font-size: 22px;
+  color: #ff8c00;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background-color: #e07b00;
 }
 </style>
