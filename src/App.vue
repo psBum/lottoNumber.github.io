@@ -80,39 +80,22 @@ export default {
 </script>
 
 <style scoped>
-/* 전체 컨테이너 */
-.app-container {
+/* 전체 컨테이너 스타일 */
+.container {
   font-family: 'Arial', sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: space-between;
-}
-
-/* Header */
-.header {
-  background-color: #ff8c00;
-  padding: 20px;
-  color: white;
   text-align: center;
+  padding: 40px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+h1 {
   font-size: 28px;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.header h1 {
-  margin: 0;
-}
-
-/* Body */
-.body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #f7f7f7;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .lotto-info p {
@@ -136,15 +119,6 @@ export default {
   background-color: #e07b00;
 }
 
-/* Footer */
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-}
-
 /* 모달 오버레이 */
 .modal-overlay {
   position: fixed;
@@ -161,7 +135,7 @@ export default {
 
 /* 모달 콘텐츠 스타일 */
 .modal-content {
-  background-color: #ff8c00;
+  background-color: #fff;
   padding: 40px;
   border-radius: 10px;
   text-align: center;
@@ -171,28 +145,19 @@ export default {
 
 h2 {
   font-size: 24px;
-  color: white;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .winning-numbers {
   font-size: 22px;
-  color: #800080; /* 보라색 */
+  color: #ff8c00;
   font-weight: bold;
   margin-bottom: 20px;
-  padding: 10px;
-  border: 2px solid #ff8c00; /* 호박색 테두리 */
-  border-radius: 5px;
-  background-color: white;
-  display: inline-block;
-}
-
-p + h2 {
-  margin-top: 20px;
 }
 
 .close-btn {
-  background-color: #333;
+  background-color: #ff8c00;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -203,6 +168,6 @@ p + h2 {
 }
 
 .close-btn:hover {
-  background-color: #555;
+  background-color: #e07b00;
 }
 </style>
